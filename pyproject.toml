@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mkdocs-github-release-assets-plugin"
+description = "MkDocs plugin to include GitHub release assets in the document"
+dependencies = ["ghapi"]
+dynamic = ["version"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "github_release_assets.version.version"}
+
+[tool.setuptools_scm]
+write_to = "src/github_release_assets/version.py"
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
+
+[project.entry-points."mkdocs.plugins"]
+"github-release-assets" = "github_release_assets.plugin:GitHubReleaseAssetsPlugin"
