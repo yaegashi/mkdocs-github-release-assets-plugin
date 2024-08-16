@@ -12,8 +12,12 @@
 			"azureDnsAutoDetection": true,
 			"installDockerBuildx": true,
 			"installDockerComposeSwitch": true,
-			"version": "latest",
-			"dockerDashComposeVersion": "none"
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"installYarnUsingApt": true,
+			"version": "lts"
 		}
 	},
 	"postCreateCommand": "bash -x .devcontainer/install-dev-tools.sh",
@@ -25,4 +29,4 @@
 			]
 		}
 	}
-}g
+}
