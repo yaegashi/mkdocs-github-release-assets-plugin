@@ -1,6 +1,8 @@
 /.venv
 /site
 /build
+/dist
 /src/github_release_assets/version.py
+/env.sh
 __pycache__
 *.egg-info

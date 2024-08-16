@@ -5,14 +5,19 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mkdocs-github-release-assets-plugin"
 description = "MkDocs plugin to include GitHub release assets in the document"
+authors = [{ name = 'Takeshi Yaegashi', email = 'yaegashi@gmail.com' }]
+maintainers = [{ name = 'Takeshi Yaegashi', email = 'yaegashi@gmail.com' }]
+license = {file = "LICENSE"}
+readme = { file = "README.md", content-type = "text/markdown" }
+keywords = ["mkdocs", "mkdocs-plugin", "github", "documentation"]
 dependencies = ["ghapi"]
 dynamic = ["version"]
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
 
 [tool.setuptools.dynamic]
-version = {attr = "github_release_assets.version.version"}
+version = { attr = "github_release_assets.version.version" }
 
 [tool.setuptools_scm]
 write_to = "src/github_release_assets/version.py"
