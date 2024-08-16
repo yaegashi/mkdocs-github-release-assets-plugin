@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python install
+        uses: actions/setup-python@v5
+      - name: MkDocs test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install mkdocs mkdocs-techdocs-core
+          python3 -m pip install .
+          mkdocs build
+      - name: Package build and release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 -m pip install build
+          python3 -m build
+          gh release create ${{ github.ref_name }} --repo ${{ github.repository }} --draft --generate-notes
+          gh release upload ${{ github.ref_name }} --repo ${{ github.repository }} --clobber dist/*.tar.gz dist/*.whl

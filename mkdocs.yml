@@ -3,9 +3,9 @@ plugins:
   - techdocs-core:
   - github-release-assets:
       owner: yaegashi
-      repo: azbill
+      repo: mkdocs-github-release-assets-plugin
       base_uri: releases
-      token: !ENV MKDOCS_GH_TOKEN
+      token: !ENV GITHUB_TOKEN
       nav_title: Releases
 
 nav:
