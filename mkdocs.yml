@@ -10,4 +10,5 @@ plugins:
 
 nav:
   - Introduction: index.md
+  - Configuration: config.md
   - Releases: []
