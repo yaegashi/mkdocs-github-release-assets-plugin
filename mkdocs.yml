@@ -1,0 +1,13 @@
+site_name: MkDocs github-release-assets plugin
+plugins:
+  - techdocs-core:
+  - github-release-assets:
+      owner: yaegashi
+      repo: azbill
+      base_uri: releases
+      token: !ENV MKDOCS_GH_TOKEN
+      nav_title: Releases
+
+nav:
+  - Introduction: index.md
+  - Releases: []
