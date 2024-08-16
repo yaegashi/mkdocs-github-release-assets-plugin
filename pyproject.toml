@@ -13,8 +13,11 @@ keywords = ["mkdocs", "mkdocs-plugin", "github", "documentation"]
 dependencies = ["ghapi"]
 dynamic = ["version"]
 
-[tool.setuptools]
-package-dir = { "" = "src" }
+[project.urls]
+repository = "https://github.com/yaegashi/mkdocs-github-release-assets-plugin"
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.setuptools.dynamic]
 version = { attr = "github_release_assets.version.version" }

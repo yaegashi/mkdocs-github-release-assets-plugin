@@ -4,6 +4,9 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -25,3 +28,10 @@ jobs:
         run: |
           python3 -m pip install twine
           python3 -m twine upload dist/*.tar.gz dist/*.whl
+      - name: Publish to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 -m pip install mkdocs mkdocs-techdocs-core
+          python3 -m pip install dist/*.whl
+          mkdocs gh-deploy --force
