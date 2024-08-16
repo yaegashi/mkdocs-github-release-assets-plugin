@@ -1,4 +1,7 @@
 site_name: MkDocs github-release-assets plugin
+repo_url: https://github.com/yaegashi/mkdocs-github-release-assets-plugin
+edit_uri: blob/main/docs/
+
 plugins:
   - techdocs-core:
   - github-release-assets:
