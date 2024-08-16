@@ -1,0 +1,1 @@
+# mkdocs-github-release-assets-plugin
