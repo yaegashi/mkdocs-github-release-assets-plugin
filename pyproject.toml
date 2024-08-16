@@ -15,6 +15,7 @@ dynamic = ["version"]
 
 [project.urls]
 repository = "https://github.com/yaegashi/mkdocs-github-release-assets-plugin"
+documentation = "https://yaegashi.github.io/mkdocs-github-release-assets-plugin/"
 
 [tool.setuptools.packages.find]
 where = ["src"]
