@@ -26,6 +26,7 @@ class GitHubReleaseAssets:
         releases = []
         for page in paged(self.api.repos.list_releases, self.owner, self.repo, per_page=100):
             releases += page
+        releases = [r for r in releases if not r.draft]
         if release_filter:
             pat = re.compile(release_filter)
             releases = [r for r in releases if pat.search(r.tag_name)]
