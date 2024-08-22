@@ -1,0 +1,23 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mkdocs-github-release-assets-plugin
+  title: MkDocs github-release-assets plulgin
+  tags:
+    - mkdocs
+    - github
+  annotations:
+    github.com/project-slug: yaegashi/mkdocs-github-release-assets-plugin
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://pypi.org/project/mkdocs-github-release-assets-plugin/
+      title: PyPI
+      icon: dashboard
+    - url: https://yaegashi.github.io/mkdocs-github-release-assets-plugin/
+      title: GitHub Pages
+      icon: dashboard
+spec:
+  type: website
+  owner: user:me/00041876.bandainamco.co.jp
+  lifecycle: experimental
